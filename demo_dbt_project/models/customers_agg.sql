@@ -1,0 +1,1 @@
+select count(*) as count_all from {{ ref('customers') }}
