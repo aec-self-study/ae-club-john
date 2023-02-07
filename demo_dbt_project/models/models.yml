@@ -1,0 +1,46 @@
+version: 2
+
+sources:
+  - name: coffee_shop
+    project: analytics-engineers-club
+    description: Nada
+    freshness:
+      warn_after: {count: 12, period: hour}
+      error_after: {count: 24, period: hour}
+    loaded_at_field: created_at
+    tables:
+      - name: orders
+        description: >
+          This is a multi-line
+          comment but it's all on one line.
+        columns:
+          - name: id
+            description: the id of the order
+            tests:
+              - unique
+              - not_null
+          - name: customer_id
+            description: the id of the customer
+            tests:
+              - not_null
+ 
+models:
+  - name: customers
+    description: |
+      Cleaned up data for our customers
+      This is a test to see what happens
+      if we put it on lots of lines
+    columns:
+      - name: customer_id
+        description: '{{ doc("customer_id") }}'
+        tests:
+          - unique
+          - not_null
+
+  - name: customers_agg
+    description: The desc
+    columns:
+      - name: has_ab
+        description: has ab
+      - name: customer_id
+        description: '{{ doc("customer_id") }}'
