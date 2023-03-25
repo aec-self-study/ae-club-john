@@ -10,4 +10,3 @@ from {{ source( 'coffee_shop', 'customers' ) }} as customers
 inner join {{ source( 'coffee_shop', 'orders' ) }} as orders on customers.id = orders.customer_id
 group by 1, 2, 3
 order by first_order_at
-limit 5
