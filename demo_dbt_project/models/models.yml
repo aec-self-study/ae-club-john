@@ -73,3 +73,12 @@ models:
         description: nnn
         tests:
           - not_null
+
+  - name: sessions
+    description: Desc goes here
+    columns:
+      - name: session_id
+        description: aaa
+        tests:
+          - not_null
+          - unique
